@@ -17,4 +17,4 @@ api.add_resource(api_handler, "/test")
 api.add_resource(fetch_chapters, "/fetch_chapters")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000, debug=True)
+    app.run(host="0.0.0.0", port=8000)
