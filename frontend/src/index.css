@@ -1,13 +1,21 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    /* Minimum width of the sidebar */
+    min-width: 20%;
+    /* Alternatively, set a minimum width as a percentage of the viewport */
+    background-color: #333;
+    /* Dark grey background color */
+    color: #fff;
+    /* Text color */
+    padding: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body,
+#images,
+#images a {
+    font-family: 'Roboto Slab', sans-serif;
 }
