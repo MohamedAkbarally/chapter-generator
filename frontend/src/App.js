@@ -63,7 +63,7 @@ function App() {
   const postData = async () => {
     setResult({ loading: true });
     try {
-      const response = await fetch('http://localhost/fetch_chapters', {
+      const response = await fetch('https://chapter-gen.herokuapp.com/fetch_chapters', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
