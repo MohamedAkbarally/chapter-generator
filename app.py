@@ -28,4 +28,3 @@ api.add_resource(fetch_chapters, "/fetch_chapters")
 
 if __name__ == "__main__":
     app.run(debug=debug, port=port)
-ß
