@@ -46,7 +46,7 @@ function Result({ result }) {
 function Footer() {
   return (
     <footer>
-      <p>&copy; 2023 Youtube Chapter Generator. All rights reserved.</p>
+      <p>&copy; 2023 Mohamed Akbarally. All rights reserved.</p>
     </footer>
   );
 }
