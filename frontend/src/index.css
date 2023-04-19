@@ -14,8 +14,21 @@
     padding: 20px;
 }
 
-body,
-#images,
-#images a {
-    font-family: 'Roboto Slab', sans-serif;
+/* Heading Font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+/* Body Font */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
 }

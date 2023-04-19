@@ -7,14 +7,25 @@ app = Flask(__name__, static_url_path="", static_folder="frontend/build/")
 cors = CORS(app)
 api = Api(app)
 
+if app.config["ENV"] == "production":
+    port = 80
+    debug = False
+else:
+    port = 5000
+    debug = True
 
-@app.route("/", defaults={"path": ""})
-def serve(path):
-    return send_from_directory(app.static_folder, "index.html")
+app.run(port=port, debug=debug)
+
+
+if app.config["ENV"] == "production":
+
+    @app.route("/", defaults={"path": ""})
+    def serve(path):
+        return send_from_directory(app.static_folder, "index.html")
 
 
 api.add_resource(api_handler, "/test")
 api.add_resource(fetch_chapters, "/fetch_chapters")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(debug=debug, port=port)
