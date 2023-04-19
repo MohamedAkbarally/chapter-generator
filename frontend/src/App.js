@@ -1,19 +1,18 @@
-import { faClipboard, faGears } from "@fortawesome/free-solid-svg-icons";
+import { faClipboard } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import React, { useEffect, useState } from 'react';
 import Data from "./Data";
-import Coin from "./res/coins.png";
 
 function Form() {
   return (
-    <div class="my-4">
-      <p class="text-secondary">Enter the URL of the video you would like to generate chapter titles for:</p>
-      <div class="d-flex bd-highlight align-items-center">
-        <div class="py-2 flex-grow-1 input-group-lg">
-          <input type="text" class="form-control" placeholder="Search" />
+    <div className="my-4">
+      <p className="text-secondary">Enter the URL of the video you would like to generate chapter titles for:</p>
+      <div className="d-flex bd-highlight align-items-center">
+        <div className="py-2 flex-grow-1 input-group-lg">
+          <input type="text" className="form-control" placeholder="Search" />
         </div>
-        <button type="button" class="ms-2 py-2 px-4 btn btn-primary btn-lg">Generate</button>
+        <button type="button" className="ms-2 py-2 px-4 btn btn-primary btn-lg">Generate</button>
       </div >
     </div>
   );
@@ -22,22 +21,22 @@ function Form() {
 function Result({ result }) {
   const { loading, data } = result
   return (
-    loading ? <div class="text-center" style={{ paddingTop: 80 }}>
-      <div class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
+    loading ? <div className="text-center" style={{ paddingTop: 80 }}>
+      <div className="spinner-border" role="status">
+        <span className="visually-hidden">Loading...</span>
       </div>
     </div> :
-      (<div class="my-4">
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button type="button" class="btn me-2 fw-bold">
-            <span class="me-2" aria-hidden="true">
+      (<div className="my-4">
+        <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button type="button" className="btn me-2 fw-bold">
+            <span className="me-2" aria-hidden="true">
               <FontAwesomeIcon icon={faClipboard} />
             </span>
             Copy
           </button>
         </div>
         {data.map((item) => (
-          <Data options={item.options} start_time={item.start_time} />
+          <Data key={item.options[0]} options={item.options} start_time={item.start_time} />
         ))}
       </div>)
   );
@@ -52,6 +51,7 @@ function Footer() {
 }
 
 
+const apiUrl = process.env.REACT_APP_API_URL;
 
 function App() {
   const [result, setResult] = useState();
@@ -63,7 +63,7 @@ function App() {
   const postData = async () => {
     setResult({ loading: true });
     try {
-      const response = await fetch('https://chapter-gen.herokuapp.com/fetch_chapters', {
+      const response = await fetch(`${apiUrl}/fetch_chapters`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -80,10 +80,10 @@ function App() {
 
   return (
     <div className="App">
-      <div class="d-flex border" style={{ height: 70, alignItems: 'stretch' }}>
-        <h5 class="my-auto px-4">Youtube Chapter Generator</h5>
+      <div className="d-flex border" style={{ height: 70, alignItems: 'stretch' }}>
+        <h5 className="my-auto px-4">Youtube Chapter Generator 2</h5>
       </div>
-      <div class="container p-4">
+      <div className="container p-4">
         <Form />
         {result && <Result result={result} />}
 

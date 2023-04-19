@@ -1,32 +1,16 @@
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 300px;
-    /* Minimum width of the sidebar */
-    min-width: 20%;
-    /* Alternatively, set a minimum width as a percentage of the viewport */
-    background-color: #333;
-    /* Dark grey background color */
-    color: #fff;
-    /* Text color */
-    padding: 20px;
-}
-
 /* Heading Font */
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6 .hfont {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
 }
 
 /* Body Font */
-body {
+body .bfont {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 16px;
