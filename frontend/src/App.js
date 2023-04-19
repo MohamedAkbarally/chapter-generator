@@ -81,7 +81,7 @@ function App() {
   return (
     <div className="App">
       <div className="d-flex border" style={{ height: 70, alignItems: 'stretch' }}>
-        <h5 className="my-auto px-4">Youtube Chapter Generator 2</h5>
+        <h5 className="my-auto px-4">Youtube Chapter Generator 3</h5>
       </div>
       <div className="container p-4">
         <Form />
