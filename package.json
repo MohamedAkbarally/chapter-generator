@@ -1,5 +1,10 @@
 {
+    "name": "my-app",
+    "version": "1.0.0",
     "scripts": {
-        "heroku-postbuild": "cd frontend && npm install && npm run build"
+        "build": "cd frontend && npm install && npm run build"
+    },
+    "engines": {
+        "node": "16.x"
     }
 }
