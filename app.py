@@ -14,8 +14,6 @@ else:
     port = 5000
     debug = True
 
-app.run(port=port, debug=debug)
-
 
 if app.config["ENV"] == "production":
 
